@@ -1,0 +1,16 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_ENCODER
+
+config ZMK_KEYBOARD_NAME
+    default "encoder"
+
+
+CONFIG_CLOCK_CONTROL_NRF_K32SRC_RC=y
+
+
+endif
+
+
+
