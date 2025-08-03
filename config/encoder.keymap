@@ -10,35 +10,28 @@
 
 / {
     behaviors {
-        new_behavior: new_behavior {
-            label = "NEW_BEHAVIOR";
-            #binding-cells = <1>;
-        };
         rot_kp: sensor_rotate_kp {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            bindings = <&kp VOL_UP &kp VOL_DN>;
+            bindings = <&kp C_VOL_UP &kp C_VOL_DN>;
         };
     };
+
     sensors: sensors {
-                compatible = "zmk,keymap-sensors";
-                sensors = <&left_encoder >;
-                triggers-per-rotation = <20>;
-            };
-    
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder>;
+        triggers-per-rotation = <20>;
+    };
 
     keymap {
         compatible = "zmk,keymap";
-        
-        
+
         default_layer {
             bindings = <
                 &kp C_MUTE
             >;
-            
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN >;
+
+            sensor-bindings = <&rot_kp>;
         };
-        
     };
-    
 };
